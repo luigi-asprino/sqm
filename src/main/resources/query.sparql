@@ -1,0 +1,13 @@
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX lsqv: <http://lsq.aksw.org/vocab#> 
+PREFIX sd: <http://www.w3.org/ns/sparql-service-description#> 
+SELECT DISTINCT ?query ?text ?endpoint ?time ?host 
+WHERE { 
+   ?query lsqv:hasRemoteExec ?re .
+   ?re lsqv:endpoint ?endpoint . 
+   ?re prov:atTime ?time .
+   OPTIONAL {?re <http://lsq.aksw.org/vocab#hostHash> ?host .}
+   ?query lsqv:text ?text . 
+} 
+ORDER BY ?time
+

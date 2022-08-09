@@ -1,0 +1,8 @@
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX lsqv: <http://lsq.aksw.org/vocab#> 
+PREFIX sd: <http://www.w3.org/ns/sparql-service-description#> 
+SELECT DISTINCT ?query ?text
+WHERE { 
+   ?query lsqv:text ?text .
+} 
+
