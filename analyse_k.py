@@ -44,7 +44,7 @@ X = csr_matrix((data_m, (row_m, col_m)), shape=(rows, columns))
 sse = {}
 
 for k in range(min, kmax + 1, step):
-    if min <= 0:
+    if k <= 0:
         continue
     kmeans_file = f"{input_folder}/kmeans_{k}.p"
     if os.path.exists(kmeans_file):
